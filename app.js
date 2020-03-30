@@ -1,6 +1,6 @@
-var light = document.getElementById("light");
-var dark = document.getElementById("dark");
-var solar = document.getElementById("solar");
+var lightButton = document.getElementById("light");
+var darkButton = document.getElementById("dark");
+var solarButton = document.getElementById("solar");
 var body = document.body;
 
 var theme = localStorage.getItem("theme");
@@ -12,26 +12,26 @@ if (theme) {
 
 if (isSolar) {
   body.classList.add("solar");
-  solar.innerText = "Not solarized";
+  solarButton.innerText = "Not solarized";
 }
 
-light.addEventListener("click", () => {
+lightButton.addEventListener("click", () => {
   body.classList.replace("dark", "light");
   localStorage.setItem("theme", "light");
 });
 
-dark.addEventListener("click", () => {
+darkButton.addEventListener("click", () => {
   body.classList.replace("light", "dark");
   localStorage.setItem("theme", "dark");
 });
 
-solar.addEventListener("click", () => {
+solarButton.addEventListener("click", () => {
   let result = body.classList.toggle("solar");
   if (result) {
-    solar.innerText = "Not solarized";
+    solarButton.innerText = "Not solarized";
     localStorage.setItem("solar", true);
   } else {
-    solar.innerText = "Solarized";
+    solarButton.innerText = "Solarized";
     localStorage.removeItem("solar");
   }
 });
