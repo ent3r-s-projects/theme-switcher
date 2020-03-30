@@ -6,8 +6,21 @@ var body = document.body;
 var theme = localStorage.getItem("theme");
 var isSolar = localStorage.getItem("solar");
 
+if (window.matchMedia("(prefers-color-scheme)").media !== "not all") {
+  //? This means dark theme preference is set in the operating system settings
+  if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    body.classList.replace("light", "dark");
+  } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    body.classList.replace("dark", "light");
+  }
+}
+
 if (theme) {
-  body.classList.replace("light", theme);
+  if (theme === "dark") {
+    body.classList.replace("light", theme);
+  } else if (theme === "light") {
+    body.classList.replace("dark", theme);
+  }
 }
 
 if (isSolar) {
