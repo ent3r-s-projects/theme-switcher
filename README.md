@@ -2,6 +2,8 @@
 
 Based on [this](https://www.youtube.com/watch?v=rXuHGLzSmSE) video by fireship
 
+Preview on codepen.io: [https://codepen.io/ent3r_/full/MWwxozz](https://codepen.io/ent3r_/full/MWwxozz)
+
 ---
 
 This theme switch uses classes and CSS-variables to define the color scheme.
